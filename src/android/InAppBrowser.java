@@ -59,6 +59,8 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.ludei.chromium.LudeiWebView;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -608,7 +610,7 @@ public class InAppBrowser extends CordovaPlugin {
                 });
 
                 // WebView
-                inAppWebView = new WebView(cordova.getActivity());
+                inAppWebView = new LudeiWebView(cordova.getActivity());
                 inAppWebView.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
                 inAppWebView.setWebChromeClient(new InAppChromeClient(thatWebView));
                 WebViewClient client = new InAppBrowserClient(thatWebView, edittext);
